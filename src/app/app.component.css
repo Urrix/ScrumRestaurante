@@ -1,54 +1,82 @@
-.example-container {
-    width: 500px;
-    height: 300px;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-    height: 100vh; /* Make the container take up the full view height */
-    position: relative;
-  }
-  
-  .example-sidenav-content {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .example-sidenav {
-    width: 250px; 
-    height: 100%; 
-    position: fixed;
-    top: 0; 
-    left: 0; 
-  }
-  
-  .example-card {
-    max-width: 400px;
-    margin-bottom: 8px;
-  }
-  .demo-table {
-    width: 100%;
-  }
-  
-  .mat-column-demo-position {
-    width: 32px;
-    border-right: 1px solid currentColor;
-    padding-right: 24px;
-    text-align: center;
-  }
-  
-  .mat-column-demo-name {
-    padding-left: 16px;
-    font-size: 20px;
-  }
-  
-  .mat-column-demo-weight {
-    font-style: italic;
-  }
-  
-  .mat-column-demo-symbol {
-    width: 32px;
-    text-align: center;
-    font-weight: bold;
-  }
-  
-  
+.table-component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.table-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.table-number {
+  width: 50px;
+  height: 50px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.table-status {
+  width: 150px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.table-orders {
+  flex: 1;
+  border: 1px solid black;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.order-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.order-dish {
+  width: 150px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.order-details {
+  width: 150px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.order-status {
+  width: 100px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.order-price {
+  width: 100px;
+  border: 1px solid black;
+  display: flex;
+}
+

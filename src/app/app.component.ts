@@ -1,39 +1,49 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import {MatButtonModule} from '@angular/material/button';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatCardModule} from '@angular/material/card';
-import { ViewChild, ElementRef, AfterViewInit } from '@angular/core';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
-import {MatDividerModule} from '@angular/material/divider';
+import { MatTableModule, MatTableDataSource } from '@angular/material/table'; // import MatTableDataSource here
 
-
+interface Order {
+  tableNumber: number;
+  status: string;
+  items: {
+    dish: string;
+    details: string;
+    status: string;
+    price: string;
+  }[];
+}
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,MatSidenavModule, MatButtonModule,MatCardModule,MatDividerModule, MatButtonModule, MatProgressBarModule],
+  imports: [RouterOutlet, MatTableModule, CommonModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  @ViewChild('drawer') drawer!: ElementRef<HTMLElement>;
-  title = 'ScrumRestaurante';
-  longText = `..............................................................................
-  .......................`;
-  showFiller: boolean = false;
+  orders: Order[] = [
+    {
+      tableNumber: 1,
+      status: 'Pedido terminado',
+      items: [
+        {
+          dish: 'Coctel de Bourbon Old',
+          details: '',
+          status: 'Entregado',
+          price: '$60'
+        },
+        {
+          dish: 'Mousse de chocolate',
+          details: '',
+          status: 'Entregado',
+          price: '$60'
+        }
+      ]
+    },
+    // Add the remaining orders here
+  ];
 
-  toggleExtraText() {
-    this.showFiller = !this.showFiller;
-    if (this.showFiller) {
-      // Adjust the sidenav's width when the extra text is shown
-      const sidenavElement = this.drawer.nativeElement;
-      sidenavElement.style.width = '400px';
-    } else {
-      // Reset the sidenav's width when the extra text is hidden
-      // Set the width to the original value (250px)
-      const sidenavElement = this.drawer.nativeElement;
-      sidenavElement.style.width = '250px';
-    }
-  }
+  displayedColumns: string[] = ['tableNumber', 'status', 'items'];
+  dataSource = new MatTableDataSource(this.orders);
 }
