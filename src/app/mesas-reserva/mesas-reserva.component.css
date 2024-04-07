@@ -1,3 +1,8 @@
-#container{
-    padding: 20px;
+.background-image {
+    background-image: url("../../assets/Image/abstract-smooth-brown-wall-background-layout-design-studio-room-web-template-business-report-with-smooth-circle-gradient-color.jpg");
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
