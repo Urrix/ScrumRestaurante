@@ -22,8 +22,14 @@
     margin-right: auto;
 }
 
-.login-container div{
-    margin-bottom: 20px;
+.login-container div, input{
+    margin-bottom: 50px;
+}
+
+.login-container .btn{
+    width: 100%;
+    background-color: black;
+    color: white;
 }
 
 .login-title{
